@@ -62,3 +62,14 @@ def financial_analysis():
     print(f'Greatest Increase in Profits: Feb-2012 (${max_change})')
     print(f'Greatest Decrease in Profits: Sep-2013 (${min_change})')
 financial_analysis()
+
+
+output_path = os.path.join('..', 'output', 'new.csv')
+
+with open(output_path, 'w', newline='') as csvfile:
+
+    csvwriter = csv.writer(csvfile, delimiter=',')
+
+    csvwriter.writerow(['Financial Analysis','Total Months','Net Total','Average Change','Greatest Increase in Profits','Greatest Decrease in Profits'])
+    csvwriter.writerow(['------------------','86','$38382578','$-2315.12','Feb-2012 ($1926159)','Sep-2013 ($-2196167)'])
+
