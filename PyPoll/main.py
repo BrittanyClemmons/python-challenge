@@ -24,7 +24,7 @@ with open(csv_path, newline = '') as election_csv:
 
 #Total number of votes cast
 
-#total_votes = len(voter_id)
+total_votes = len(voter_id)
 #print(total_votes)
 
 
@@ -54,10 +54,36 @@ for i in range(0, len(candidates)):
         print("Unknown candidate found")
         print("Run unique candidate function")
 
-print(Khan_Count)    
-print(Correy_Count)
-print(Li_Count)
-print(O_Tooley_Count)
+#print(Khan_Count)    
+#print(Correy_Count)
+#print(Li_Count)
+#print(O_Tooley_Count)
 
 #Percentage of votes each candidate won
+
+Khan_win = round(((Khan_Count / total_votes) * 100), 3)
+Correy_win = round(((Correy_Count / total_votes) * 100), 3)
+Li_win = round(((Li_Count / total_votes) * 100), 3)
+OTooley_win = round(((O_Tooley_Count / total_votes) * 100), 3)
+#print(Khan_win)
+#print(Correy_win)
+#print(Li_win)
+#print(OTooley_win)
+
 #Winner of the election based on popular vote
+
+def election_results():
+    print(" ")
+    print("Election Results")
+    print("--------------------------")
+    print(f'Total Votes: {total_votes}')
+    print("--------------------------")
+    print(f'Khan:     {Khan_win}%  ({Khan_Count})')
+    print(f'Correy:   {Correy_win}%  ({Correy_Count})')
+    print(f'Li:       {Li_win}%  ({Li_Count})')
+    print(f"O'Tooley:  {OTooley_win}%  ({O_Tooley_Count})")
+    print("--------------------------")
+    print(f'Winner: Khan')
+    print("--------------------------")
+
+election_results()
